@@ -1,7 +1,8 @@
 /**
-  * Copyright 2017 bejson.com 
-  */
+ * Copyright 2017 bejson.com
+ */
 package com.slkk.tbreviewimage.bean;
+
 import java.util.List;
 
 /**
@@ -16,64 +17,73 @@ public class AppendList {
     private String content;
     private List<String> videos;
     private String vicious;
-    private String reply;
+    private Reply reply;
     private boolean show;
     private int dayAfterConfirm;
-    private int appendId;
+    private long appendId;
+
     public void setPhotos(List<Photos> photos) {
-         this.photos = photos;
-     }
-     public List<Photos> getPhotos() {
-         return photos;
-     }
+        this.photos = photos;
+    }
+
+    public List<Photos> getPhotos() {
+        return photos;
+    }
 
     public void setContent(String content) {
-         this.content = content;
-     }
-     public String getContent() {
-         return content;
-     }
+        this.content = content;
+    }
+
+    public String getContent() {
+        return content;
+    }
 
     public void setVideos(List<String> videos) {
-         this.videos = videos;
-     }
-     public List<String> getVideos() {
-         return videos;
-     }
+        this.videos = videos;
+    }
+
+    public List<String> getVideos() {
+        return videos;
+    }
 
     public void setVicious(String vicious) {
-         this.vicious = vicious;
-     }
-     public String getVicious() {
-         return vicious;
-     }
+        this.vicious = vicious;
+    }
 
-    public void setReply(String reply) {
-         this.reply = reply;
-     }
-     public String getReply() {
-         return reply;
-     }
+    public String getVicious() {
+        return vicious;
+    }
+
+    public void setReply(Reply reply) {
+        this.reply = reply;
+    }
+
+    public Reply getReply() {
+        return reply;
+    }
 
     public void setShow(boolean show) {
-         this.show = show;
-     }
-     public boolean getShow() {
-         return show;
-     }
+        this.show = show;
+    }
+
+    public boolean getShow() {
+        return show;
+    }
 
     public void setDayAfterConfirm(int dayAfterConfirm) {
-         this.dayAfterConfirm = dayAfterConfirm;
-     }
-     public int getDayAfterConfirm() {
-         return dayAfterConfirm;
-     }
+        this.dayAfterConfirm = dayAfterConfirm;
+    }
 
-    public void setAppendId(int appendId) {
-         this.appendId = appendId;
-     }
-     public int getAppendId() {
-         return appendId;
-     }
+    public int getDayAfterConfirm() {
+        return dayAfterConfirm;
+    }
+
+    public void setAppendId(long appendId) {
+        this.appendId = appendId;
+    }
+
+    public long getAppendId() {
+        return appendId;
+    }
 
 }

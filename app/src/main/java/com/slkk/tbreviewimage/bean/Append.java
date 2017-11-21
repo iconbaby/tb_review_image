@@ -16,10 +16,10 @@ public class Append {
     private String content;
     private List<String> videos;
     private String vicious;
-    private String reply;
+    private Reply reply;
     private boolean show;
     private int dayAfterConfirm;
-    private int appendId;
+    private long appendId;
     public void setPhotos(List<Photos> photos) {
          this.photos = photos;
      }
@@ -48,10 +48,10 @@ public class Append {
          return vicious;
      }
 
-    public void setReply(String reply) {
+    public void setReply(Reply reply) {
          this.reply = reply;
      }
-     public String getReply() {
+     public Reply getReply() {
          return reply;
      }
 
@@ -69,10 +69,10 @@ public class Append {
          return dayAfterConfirm;
      }
 
-    public void setAppendId(int appendId) {
+    public void setAppendId(long appendId) {
          this.appendId = appendId;
      }
-     public int getAppendId() {
+     public long getAppendId() {
          return appendId;
      }
 

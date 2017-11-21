@@ -1,6 +1,6 @@
 /**
-  * Copyright 2017 bejson.com 
-  */
+ * Copyright 2017 bejson.com
+ */
 package com.slkk.tbreviewimage.bean;
 
 /**
@@ -11,44 +11,50 @@ package com.slkk.tbreviewimage.bean;
  */
 public class Photos {
 
-    private int fileId;
-    private int receiveId;
+    private long fileId;
+    private long receiveId;
     private String thumbnail;
     private int status;
     private String url;
-    public void setFileId(int fileId) {
-         this.fileId = fileId;
-     }
-     public int getFileId() {
-         return fileId;
-     }
 
-    public void setReceiveId(int receiveId) {
-         this.receiveId = receiveId;
-     }
-     public int getReceiveId() {
-         return receiveId;
-     }
+    public void setFileId(int fileId) {
+        this.fileId = fileId;
+    }
+
+    public long getFileId() {
+        return fileId;
+    }
+
+    public void setReceiveId(long receiveId) {
+        this.receiveId = receiveId;
+    }
+
+    public long getReceiveId() {
+        return receiveId;
+    }
 
     public void setThumbnail(String thumbnail) {
-         this.thumbnail = thumbnail;
-     }
-     public String getThumbnail() {
-         return thumbnail;
-     }
+        this.thumbnail = thumbnail;
+    }
+
+    public String getThumbnail() {
+        return thumbnail;
+    }
 
     public void setStatus(int status) {
-         this.status = status;
-     }
-     public int getStatus() {
-         return status;
-     }
+        this.status = status;
+    }
+
+    public int getStatus() {
+        return status;
+    }
 
     public void setUrl(String url) {
-         this.url = url;
-     }
-     public String getUrl() {
-         return url;
-     }
+        this.url = url;
+    }
+
+    public String getUrl() {
+        return url;
+    }
 
 }
