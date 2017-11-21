@@ -38,6 +38,12 @@ import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainActivity extends AppCompatActivity {
+
+    private static final String TAG = "MainActivity";
+    Gson gson = new GsonBuilder().setLenient().create();
+    private Converter.Factory jsonConverter = GsonConverterFactory.create(gson);
+    private CallAdapter.Factory rxjavaAdapterFactory = RxJava2CallAdapterFactory.create();
+
     private String auctionNumId = "38088752805";
     private String userNumId = "775431765";
     private String currentPageNum = "2";
@@ -57,23 +63,17 @@ public class MainActivity extends AppCompatActivity {
     private String _ksTS = "1510993902912_2186";
     private String callback = "jsonp_tbcrate_reviews_list";
 
-    Gson gson = new GsonBuilder()
-            .setLenient()
-            .create();
-    private static final String TAG = "MainActivity";
-    private Converter.Factory jsonConverter = GsonConverterFactory.create(gson);
-    private CallAdapter.Factory rxjavaAdapterFactory = RxJava2CallAdapterFactory.create();
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
 //        loadData();
 
+        downloadImage(String.valueOf(2));
 
-        downloadImage();
     }
 
+    //loadImage throw new Thread;
     private void loadData() {
 
         Retrofit retrofit = new Retrofit.Builder()
@@ -141,6 +141,12 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * save image to disk
+     *
+     * @param fieldId
+     * @param bitmap
+     */
     private void saveImage(long fieldId, Bitmap bitmap) {
         String absolutePath = Environment
                 .getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES)
@@ -160,7 +166,10 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void downloadImage() {
+    /**
+     * download image throw rajava + retrofig + glide
+     */
+    private void downloadImage(String currentPageNum) {
         Retrofit retrofit = new Retrofit.Builder()
                 .client(new OkHttpClient())
                 .baseUrl("https://rate.taobao.com/")
@@ -168,9 +177,10 @@ public class MainActivity extends AppCompatActivity {
                 .addCallAdapterFactory(rxjavaAdapterFactory)
                 .build();
         TbApi tbApi = retrofit.create(TbApi.class);
-        tbApi.getImageUrl(auctionNumId, userNumId,
-                currentPageNum, pageSize, rateType, orderType,
-                attribute, sku, hasSku, folded, ua, _ksTS, callback)
+        tbApi.getImageUrl(auctionNumId, userNumId, currentPageNum,
+                pageSize, rateType, orderType,
+                attribute, sku, hasSku,
+                folded, ua, _ksTS, callback)
                 .subscribeOn(Schedulers.io())
                 .observeOn(Schedulers.io())
                 .subscribe(new Consumer<JsonRootBean>() {
@@ -202,6 +212,7 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void accept(Throwable throwable) throws Exception {
                         Log.i(TAG, "accept: exception" + throwable.toString());
+                        throwable.printStackTrace();
                     }
                 });
     }

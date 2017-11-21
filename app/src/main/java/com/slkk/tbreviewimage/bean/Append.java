@@ -14,7 +14,7 @@ public class Append {
 
     private List<Photos> photos;
     private String content;
-    private List<String> videos;
+    private List<Video> videos;
     private String vicious;
     private Reply reply;
     private boolean show;
@@ -34,10 +34,10 @@ public class Append {
          return content;
      }
 
-    public void setVideos(List<String> videos) {
+    public void setVideos(List<Video> videos) {
          this.videos = videos;
      }
-     public List<String> getVideos() {
+     public List<Video> getVideos() {
          return videos;
      }
 

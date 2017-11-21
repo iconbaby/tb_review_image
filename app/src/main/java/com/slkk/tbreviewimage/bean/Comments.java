@@ -28,20 +28,20 @@ public class Comments {
     private int dayAfterConfirm;
     private BidPriceMoney bidPriceMoney;
     private String rate;
-    private String o2oRate;
+    private O2oRate o2oRate;
     private String propertiesAvg;
     private boolean showDepositIcon;
     private long rateId;
     private int creditFraudRule;
     private int useful;
-    private String reply;
-    private String video;
+    private Reply reply;
+    private Video video;
     private Append append;
     private int mainTradeId;
     private int status;
     private List<String> spuRatting;
     private int raterType;
-    private String serviceRate;
+    private ServiceRate serviceRate;
     private List<Photos> photos;
     private String content;
     private String vicious;
@@ -170,11 +170,11 @@ public class Comments {
         return rate;
     }
 
-    public void setO2oRate(String o2oRate) {
+    public void setO2oRate(O2oRate o2oRate) {
         this.o2oRate = o2oRate;
     }
 
-    public String getO2oRate() {
+    public O2oRate getO2oRate() {
         return o2oRate;
     }
 
@@ -218,19 +218,19 @@ public class Comments {
         return useful;
     }
 
-    public void setReply(String reply) {
+    public void setReply(Reply reply) {
         this.reply = reply;
     }
 
-    public String getReply() {
+    public Reply getReply() {
         return reply;
     }
 
-    public void setVideo(String video) {
+    public void setVideo(Video video) {
         this.video = video;
     }
 
-    public String getVideo() {
+    public Video getVideo() {
         return video;
     }
 
@@ -274,11 +274,11 @@ public class Comments {
         return raterType;
     }
 
-    public void setServiceRate(String serviceRate) {
+    public void setServiceRate(ServiceRate serviceRate) {
         this.serviceRate = serviceRate;
     }
 
-    public String getServiceRate() {
+    public ServiceRate getServiceRate() {
         return serviceRate;
     }
 
